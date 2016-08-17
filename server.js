@@ -8,6 +8,7 @@ var express    = require('express');        // call express
 var app        = express();                 // define our app using express
 var bodyParser = require('body-parser');
 var cors = require('cors');
+var apiController = require('./controllers/api');
 
 // configure app to use bodyParser()
 // this will let us get the data from a POST
@@ -37,6 +38,17 @@ router.post('/v1/analyze', function(req, res) {
   });
 });
 
+router.get('/analyze', function (request, response, next) {
+  // make query params from what we are getting back from the API
+  console.log('got here', apiController);
+  apiController.getAnalysis(request.query, function (error, apiResponseobject, body) {  // json always patterned as error, results
+    if (error) { response.status(500).json({ error: error.message }); }
+    // if no error, render the results
+    response.json(JSON.parse(body));
+  });
+});
+
+
 
 // more routes for our API will happen here
 
@@ -48,3 +60,4 @@ app.use('/', router);
 // =============================================================================
 app.listen(port);
 console.log('Magic happens on port ' + port);
+module.exports = router;
