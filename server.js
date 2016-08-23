@@ -9,6 +9,8 @@ var app        = express();                 // define our app using express
 var bodyParser = require('body-parser');
 var cors = require('cors');
 var apiController = require('./controllers/api');
+var https = require('https');
+var fs = require('fs');
 
 // configure app to use bodyParser()
 // this will let us get the data from a POST
@@ -38,13 +40,25 @@ router.post('/v1/analyze', function(req, res) {
   });
 });
 
-router.get('/analyze', function (request, response, next) {
+// path on my app
+// the request is where the http request is passeed through
+// express is an object that has keys and one of the keys is router
+router.post('/analyze', function (request, response, next) { // function is a callback and it wildo the thing
   // make query params from what we are getting back from the API
+  // console.log('this is the request', request);
   console.log('got here', apiController);
-  apiController.getAnalysis(request.query, function (error, apiResponseobject, body) {  // json always patterned as error, results
+  // this is accessing the request, but only the body
+  // this is being passed
+  // console.log('this is a body request', request.body);
+  apiController.getAnalysis(request.body, function (error, apiResponseobject, body) {  // json always patterned as error, results
+    // console.log('this is the body response', body);
+    // console.log('this is the error', error);
     if (error) { response.status(500).json({ error: error.message }); }
     // if no error, render the results
-    response.json(JSON.parse(body));
+    console.log('reached success!');
+        // console.log('what is in here?', body.body);
+    response.json(JSON.parse(body.body));
+
   });
 });
 
@@ -58,6 +72,13 @@ app.use('/', router);
 
 // START THE SERVER
 // =============================================================================
-app.listen(port);
+// Setup HTTPS
+var options = {
+  key: fs.readFileSync('./private.key'),
+  cert: fs.readFileSync('./certificate.pem')
+};
+
+var secureServer = https.createServer(options, app).listen(port);
 console.log('Magic happens on port ' + port);
+
 module.exports = router;

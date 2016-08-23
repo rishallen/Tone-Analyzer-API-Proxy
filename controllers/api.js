@@ -9,7 +9,8 @@ let password = keys.password;
 
   module.exports = {
     //the attribute(analysis) holds the function
-    getAnalysis: function() {
+    // query = request body from the server.js file
+    getAnalysis: function(query, callback) {
       var tone_analyzer = new ToneAnalyzerV3({
         username: username,
         password: password,
@@ -18,14 +19,9 @@ let password = keys.password;
   });
 
     tone_analyzer.tone({
-      text: 'A word is dead when it is said, some say. Emily Dickinson'
-    },
-    function(err, tone) {
-      if (err)
-        console.log(err);
-      else
-        console.log(JSON.stringify(tone, null, 2));
-    });
+      // this holds the text
+      text:  query.text
+    }, callback); // takes a function(error, body) this comes from server.js
   }
 };
 // when you require this file, you get the emotion object with the analysis function in it
