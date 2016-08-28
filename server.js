@@ -19,10 +19,8 @@ var document = jsdom.jsdom(),
     svg = d3.select(document.body).append("svg");
 
 'use strict';
-
 // Run some jQuery on a html fragment
 var jsdom = require("jsdom");
-
 jsdom.env(
   '<p><a class="the-link" href="https://github.com/tmpvar/jsdom">jsdom!</a></p>',
   ["http://code.jquery.com/jquery.js"],
@@ -42,7 +40,9 @@ app.use(cors());
 
 
 var port = process.env.PORT || 8080;        // set our port
-
+var port = server.address().port;
+  console.log("App now running on port", port);
+  
 // ROUTES FOR OUR API
 // =============================================================================
 var router = express.Router();              // get an instance of the express Router
