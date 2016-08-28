@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <title>Tonalyze Chrome Extension</title>
+    <link rel="stylesheet" scr="https://d3js.org/d3.v4.min.js" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+
+</head>
+
+  <style>
+
+  path {
+    fill: none;
+    stroke: blue;
+    stroke-width: 1.5px;
+  }
+  </style>
+
+  <body>
+  <script src="//d3js.org/d3.v3.min.js"></script>
+  <script>
+
+    var width = 960,
+        height = 300;
+
+    var svg = d3.select("body").append("svg")
+        .attr("width", width)
+        .attr("height", height);
+
+    var d0 = "M75,300 A125,125 0 0,1 325,300",
+        d1 = "M 10,90 Q 100,15 200,70 Q 340,140 400,30";
+
+    svg.append("path")
+        .attr("id", "wavy")
+        .attr("transform", "translate(180,150)scale(2,2)")
+        .attr("d", d0)
+        .call(transition, d0, d1);
+
+        //Create an SVG text element and append a textPath element
+    svg.append("text")
+      .append("textPath") //append a textPath to the text element
+      .attr("xlink:href", "#wavy") //place the ID of the path here
+      .style("text-anchor","middle") //place the text halfway on the arc
+      .attr("startOffset", "50%")
+      .text("Welcome to Tonalyze!")
+      .style("font-size", "25px")
+
+    function transition(path, d0, d1) {
+      path.transition()
+          .duration(2000)
+          .attrTween("d", pathTween(d1, 4))
+          .each("end", function() { d3.select(this).call(transition, d1, d0); });
+    }
+
+    function pathTween(d1, precision) {
+      return function() {
+        var path0 = this,
+            path1 = path0.cloneNode(),
+            n0 = path0.getTotalLength(),
+            n1 = (path1.setAttribute("d", d1), path1).getTotalLength();
+
+        // Uniform sampling of distance based on specified precision.
+        var distances = [0], i = 0, dt = precision / Math.max(n0, n1);
+        while ((i += dt) < 1) distances.push(i);
+        distances.push(1);
+
+        // Compute point-interpolators at each distance.
+        var points = distances.map(function(t) {
+          var p0 = path0.getPointAtLength(t * n0),
+              p1 = path1.getPointAtLength(t * n1);
+          return d3.interpolate([p0.x, p0.y], [p1.x, p1.y]);
+        });
+
+        return function(t) {
+          return t < 1 ? "M" + points.map(function(p) { return p(t); }).join("L") : d1;
+        };
+      };
+    }
+  </script>
+
+
+<p>
+<blockquote
+cite="http://www.ibm.com/watson/developercloud/doc/tone-analyzer/understanding-tone.shtml">
+The Tone Analyzer Service helps people to understand three categories of tone scores: emotional tone, social tone, and language tone.
+Each category has several sub-tones that the service scores. These tables describe each emotion or category,
+and how to interpret the score the service returns for that emotion.
+</blockquote>
+</p>
+
+
+<hr>
+<footer id="copyright">
+    <span class='copy'>Copyright &copy; Risha Allen 2016</span>
+    <span class="contact"><a href="https://github.com/rishallen/evolution-in-color">Github</a> <span class="divider">•</span> <a href="https://www.linkedin.com/in/lisa-rolczynski-507a1811">LinkedIn</a> <span class="divider">•</span> <a href="mailto:lisa.sano@gmail.com?Subject=Hey%20Lisa" target="_top">Email Me</a></span>
+</footer>
+</body>
+</html>
