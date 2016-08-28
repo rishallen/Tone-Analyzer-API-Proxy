@@ -1,0 +1,67 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/local/Cellar/node/6.3.1/bin/node',
+1 verbose cli   '/usr/local/bin/npm',
+1 verbose cli   'install',
+1 verbose cli   'express',
+1 verbose cli   'tonalyze',
+1 verbose cli   '--save' ]
+2 info using npm@3.10.3
+3 info using node@v6.3.1
+4 silly loadCurrentTree Starting
+5 silly install loadCurrentTree
+6 silly install readLocalPackageData
+7 silly fetchPackageMetaData express@4.8.0
+8 silly fetchPackageMetaData tonalyze
+9 silly fetchNamedPackageData express
+10 silly mapToRegistry name express
+11 silly mapToRegistry using default registry
+12 silly mapToRegistry registry https://registry.npmjs.org/
+13 silly mapToRegistry data Result {
+13 silly mapToRegistry   raw: 'express',
+13 silly mapToRegistry   scope: null,
+13 silly mapToRegistry   escapedName: 'express',
+13 silly mapToRegistry   name: 'express',
+13 silly mapToRegistry   rawSpec: '',
+13 silly mapToRegistry   spec: 'latest',
+13 silly mapToRegistry   type: 'tag' }
+14 silly mapToRegistry uri https://registry.npmjs.org/express
+15 silly fetchDirectoryPackageData tonalyze
+16 verbose get https://registry.npmjs.org/express not expired, no request
+17 silly install normalizeTree
+18 silly loadCurrentTree Finishing
+19 silly loadIdealTree Starting
+20 silly install loadIdealTree
+21 silly cloneCurrentTree Starting
+22 silly install cloneCurrentTreeToIdealTree
+23 silly cloneCurrentTree Finishing
+24 silly loadShrinkwrap Starting
+25 silly install loadShrinkwrap
+26 silly loadShrinkwrap Finishing
+27 silly loadAllDepsIntoIdealTree Starting
+28 silly install loadAllDepsIntoIdealTree
+29 silly rollbackFailedOptional Starting
+30 silly rollbackFailedOptional Finishing
+31 silly runTopLevelLifecycles Starting
+32 silly runTopLevelLifecycles Finishing
+33 silly install printInstalled
+34 verbose stack Error: Refusing to install sentiment as a dependency of itself
+34 verbose stack     at checkSelf (/usr/local/lib/node_modules/npm/lib/install/validate-args.js:53:14)
+34 verbose stack     at Array.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/slide/lib/bind-actor.js:15:8)
+34 verbose stack     at LOOP (/usr/local/lib/node_modules/npm/node_modules/slide/lib/chain.js:15:14)
+34 verbose stack     at chain (/usr/local/lib/node_modules/npm/node_modules/slide/lib/chain.js:20:5)
+34 verbose stack     at /usr/local/lib/node_modules/npm/lib/install/validate-args.js:16:5
+34 verbose stack     at /usr/local/lib/node_modules/npm/node_modules/slide/lib/async-map.js:52:35
+34 verbose stack     at Array.forEach (native)
+34 verbose stack     at /usr/local/lib/node_modules/npm/node_modules/slide/lib/async-map.js:52:11
+34 verbose stack     at Array.forEach (native)
+34 verbose stack     at asyncMap (/usr/local/lib/node_modules/npm/node_modules/slide/lib/async-map.js:51:8)
+35 verbose cwd /Users/RA/C5/projects/sentiment
+36 error Darwin 14.5.0
+37 error argv "/usr/local/Cellar/node/6.3.1/bin/node" "/usr/local/bin/npm" "install" "express" "tonalyze" "--save"
+38 error node v6.3.1
+39 error npm  v3.10.3
+40 error code ENOSELF
+41 error Refusing to install sentiment as a dependency of itself
+42 error If you need help, you may report this error at:
+42 error     <https://github.com/npm/npm/issues>
+43 verbose exit [ 1, true ]
