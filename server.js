@@ -5,28 +5,25 @@
 
 // call the packages we need
 var express    = require('express');        // call express
+var app        = express();                 // define our app using express
 var bodyParser = require('body-parser');
 var cors = require('cors');
 var apiController = require('./controllers/api');
 var https = require('https');
 var fs = require('fs');
 var path = require("path");
+var bootstrap = require("express-bootstrap-service");
 var d3 = require("d3");
-var app = module.exports = express();
+
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
-
-
-
-
+app.use(express.static('public'));
+app.use(bootstrap.serve);
 
 //Enable All CORS Requests
 app.use(cors());
 
-// // view engine setup
-// app.set('public', path.join(__dirname, 'public'));
-// app.set('view engine', 'html');
 
 var port = process.env.PORT || 8080;        // set our port
 
@@ -36,19 +33,19 @@ var router = express.Router();              // get an instance of the express Ro
 
 
 router.get("/",function(req,res){
-  res.sendFile(path + "index.html", { root: __dirname });
-  // res.sendFile('index.html');
+  // res.sendFile(path + "index.html", { root: __dirname });
+  res.sendFile('index.html');
 });
 
 router.get('/the_science',function(req,res){
   res.sendFile("the_science.html");
 });
 
-// router.get('/getting_started',function(req,res){
-//   res.sendFile("getting_started.html");
-// });
+router.get('/getting_started',function(req,res){
+  res.sendFile("getting_started.html");
+});
 
-app.use(express.static('public'));
+
 // endpoint
 router.post('/v1/analyze', function(req, res) {
   res.json({
