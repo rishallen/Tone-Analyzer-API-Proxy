@@ -1,83 +1,58 @@
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
-<head>
+  <head>
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
     <meta charset="UTF-8">
-    <script src="https://d3js.org/d3.v4.min.js"></script>
-    <title>Tonalyze Chrome Extension</title>
+    <meta content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
+    <metta http-equiv="Content-Type" content="application/xhtml+xml"
+
+    <title></title>
     <link rel="stylesheet" scr="https://d3js.org/d3.v4.min.js" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:400,900" type="text/css">
 
-</head>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.3/angular.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.3/angular-route.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+    <script src="script.js"></script>
 
-  <style>
-
-  path {
-    fill: none;
-    stroke: blue;
-    stroke-width: 1.5px;
-  }
-  </style>
+    <script src="//d3js.org/d3.v3.min.js"></script>
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <script type="text/javascript" src="/d3/d3.min.js"></script>
+    <script type="text/javascript" src="/d3/d3-tip.js"></script>
+    <script type="text/javascript" src="/three/three.js"></script>
+  </head>
 
   <body>
-  <script src="//d3js.org/d3.v3.min.js"></script>
-  <script>
 
-    var width = 960,
-        height = 300;
+  <div>
+  <nav class="navbar navbar-inverse" role="navigation" style="padding-left:130px;">
+         <ul class="nav navbar-nav">
+        <li class="active"><a href="/">About<span class="sr-only">(current)</span></a></li>
+        <li><a href="/about">The Science</a></li>
+        <li><a href="/contact">Getting Started</a></li>
+      </ul>
+  </nav>
+  </div>
+  <br/>
+  <div class="jumbotron"> <p>
+  This is place to put content. You can put slider, short description about your website and place some links for navigation.
+  </p></div>
+  </div>
 
-    var svg = d3.select("body").append("svg")
-        .attr("width", width)
-        .attr("height", height);
+    <h1>Analyze your Words</h1>
+      <h2 class="science">Modeling color changes of peppered moths, a classic example of evolution, using a genetic algorithm</h2>
 
-    var d0 = "M75,300 A125,125 0 0,1 325,300",
-        d1 = "M 10,90 Q 100,15 200,70 Q 340,140 400,30";
+      <div id="tone-analysis">
+       <p>In the early-1800's, peppered moths lived on lichen-covered birch trees and were white with black speckles, making them blend in with their environment. An all-black variant of the peppered moth was virtually unknown.</p>
 
-    svg.append("path")
-        .attr("id", "wavy")
-        .attr("transform", "translate(180,150)scale(2,2)")
-        .attr("d", d0)
-        .call(transition, d0, d1);
+       <p>After the industrial revolution, soot was pumped out into the atmosphere, changing the moths' habitat by making the trees dark and bare. Moths that were previously well camouflaged became easy prey, and the black variant of the moth began to thrive. Within a century, most of the moths in the region were black.</p>
 
-        //Create an SVG text element and append a textPath element
-    svg.append("text")
-      .append("textPath") //append a textPath to the text element
-      .attr("xlink:href", "#wavy") //place the ID of the path here
-      .style("text-anchor","middle") //place the text halfway on the arc
-      .attr("startOffset", "50%")
-      .text("Welcome to Tonalyze!")
-      .style("font-size", "25px")
+       <p>As environmental regulations became more strict and the air was cleaned up, the trees became light again&mdash;and the moth population once again changed. Within decades, white peppered moths were abundant, and black ones were rare.</p>
 
-    function transition(path, d0, d1) {
-      path.transition()
-          .duration(2000)
-          .attrTween("d", pathTween(d1, 4))
-          .each("end", function() { d3.select(this).call(transition, d1, d0); });
-    }
-
-    function pathTween(d1, precision) {
-      return function() {
-        var path0 = this,
-            path1 = path0.cloneNode(),
-            n0 = path0.getTotalLength(),
-            n1 = (path1.setAttribute("d", d1), path1).getTotalLength();
-
-        // Uniform sampling of distance based on specified precision.
-        var distances = [0], i = 0, dt = precision / Math.max(n0, n1);
-        while ((i += dt) < 1) distances.push(i);
-        distances.push(1);
-
-        // Compute point-interpolators at each distance.
-        var points = distances.map(function(t) {
-          var p0 = path0.getPointAtLength(t * n0),
-              p1 = path1.getPointAtLength(t * n1);
-          return d3.interpolate([p0.x, p0.y], [p1.x, p1.y]);
-        });
-
-        return function(t) {
-          return t < 1 ? "M" + points.map(function(p) { return p(t); }).join("L") : d1;
-        };
-      };
-    }
-  </script>
+       <p> class="explanation">This simulation demonstrates the effects of mutation and fitness advantage in achieving such rapid changes toward a highly camouflaged population.</p>
+     </div>
 
 
 <p>

@@ -12,28 +12,14 @@ var apiController = require('./controllers/api');
 var https = require('https');
 var fs = require('fs');
 var path = require("path");
-var d3 = require('d3');
-var d3 = require("d3"),
-    jsdom = require("jsdom");
-var document = jsdom.jsdom(),
-    svg = d3.select(document.body).append("svg");
+var bootstrap = require("express-bootstrap-service");
+var d3 = require("d3");
 
-'use strict';
-// Run some jQuery on a html fragment
-var jsdom = require("jsdom");
-jsdom.env(
-  '<p><a class="the-link" href="https://github.com/tmpvar/jsdom">jsdom!</a></p>',
-  ["http://code.jquery.com/jquery.js"],
-  function (err, window) {
-    console.log("contents of a.the-link:", window.$("a.the-link").text());
-  }
-);
 
-// configure app to use bodyParser()
-// this will let us get the data from a POST
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(express.static('public'));
+app.use(bootstrap.serve);
 
 //Enable All CORS Requests
 app.use(cors());
@@ -45,10 +31,20 @@ var port = process.env.PORT || 8080;        // set our port
 // =============================================================================
 var router = express.Router();              // get an instance of the express Router
 
-// not being used
-router.get('/', function(req, res) {
-    // res.sendFile(path.join(__dirname+'/index.html'));
+
+router.get("/",function(req,res){
+  // res.sendFile(path + "index.html", { root: __dirname });
+  res.send('index.html');
 });
+
+router.get('/the_science',function(req,res){
+  res.send("the_science.html");
+});
+
+router.get('/getting_started',function(req,res){
+  res.send("getting_started.html");
+});
+
 
 // endpoint
 router.post('/v1/analyze', function(req, res) {
@@ -58,22 +54,15 @@ router.post('/v1/analyze', function(req, res) {
 });
 
 // path on my app
-// the request is where the http request is passeed through
-// express is an object that has keys and one of the keys is router
 router.post('/analyze', function (request, response, next) { // function is a callback and it wildo the thing
-  // make query params from what we are getting back from the API
   // console.log('this is the request', request);
   console.log('got here', apiController);
-  // this is accessing the request, but only the body
-  // this is being passed
   // console.log('this is a body request', request.body);
   apiController.getAnalysis(request.body, function (error, apiResponseobject, body) {  // json always patterned as error, results
     console.log('this is the body response', body);
     // console.log('this is the error', error);
     if (error) { response.status(500).json({ error: error.message }); }
-    // if no error, render the results
     // console.log('reached success!');
-        // console.log('what is in here?', body.body);
     response.json(JSON.parse(body.body));
 
   });
@@ -86,6 +75,16 @@ router.post('/analyze', function (request, response, next) { // function is a ca
 // REGISTER OUR ROUTES -------------------------------
 // all of our routes will be prefixed with /
 app.use('/', router);
+
+app.use("*",function(req,res){
+  res.sendFile(path + "404.html");
+});
+
+// print the type of http request that route is referring to
+router.use(function (req,res,next) {
+  console.log("/" + req.method);
+  next();
+});
 
 // START THE SERVER
 // =============================================================================
