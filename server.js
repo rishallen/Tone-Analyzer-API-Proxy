@@ -18,7 +18,8 @@ var d3 = require("d3");
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
-app.use(express.static('public'));
+// app.use(express.static('public'));
+app.use(express.static(path.join(__dirname, 'views')));
 app.use(bootstrap.serve);
 
 //Enable All CORS Requests
@@ -30,20 +31,21 @@ var port = process.env.PORT || 8080;        // set our port
 // ROUTES FOR OUR API
 // =============================================================================
 var router = express.Router();              // get an instance of the express Router
-
+//
 
 router.get("/",function(req,res){
   // res.sendFile(path + "index.html", { root: __dirname });
   res.sendFile('index.html');
+    // res.sendFile("/views/index.html", { root: __dirname });
 });
-
-router.get('/the_science',function(req,res){
-  res.sendFile("the_science.html");
-});
-
-router.get('/getting_started',function(req,res){
-  res.sendFile("getting_started.html");
-});
+//
+// router.get('/the_science',function(req,res){
+//   res.sendFile("the_science.html");
+// });
+//
+// router.get('/getting_started',function(req,res){
+//   res.sendFile("getting_started.html");
+// });
 
 
 // endpoint
@@ -76,9 +78,9 @@ router.post('/analyze', function (request, response, next) { // function is a ca
 // all of our routes will be prefixed with /
 app.use('/', router);
 
-app.use("*",function(req,res){
-  res.sendFile(path + "404.html");
-});
+// app.use("*",function(req,res){
+//   res.sendFile(path + "404.html");
+// });
 
 // print the type of http request that route is referring to
 router.use(function (req,res,next) {
