@@ -1,6 +1,6 @@
 html, body {
     height:100%;
-    background-color: rgb(247, 247, 244);
+    background-color: rgb(202, 202, 202);
 }
 
 .navbar-default {
@@ -76,4 +76,8 @@ ul.topnav li.icon {display: none;}
 
 .navbar-brand{
   font-size: 30px;
+}
+
+.colors{
+  color: rgb(29, 16, 85);
 }
