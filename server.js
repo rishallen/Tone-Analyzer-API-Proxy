@@ -9,7 +9,7 @@ var app        = express();                 // define our app using express
 var bodyParser = require('body-parser');
 var cors = require('cors');
 var apiController = require('./controllers/api');
-var https = require('https');
+var http = require('http');
 var fs = require('fs');
 var path = require("path");
 var bootstrap = require("express-bootstrap-service");
@@ -91,12 +91,13 @@ router.use(function (req,res,next) {
 // START THE SERVER
 // =============================================================================
 // Setup HTTPS
-var options = {
-  key: fs.readFileSync('./private.key'),
-  cert: fs.readFileSync('./certificate.pem')
-};
+// var options = {
+//   key: fs.readFileSync('./private.key'),
+//   cert: fs.readFileSync('./certificate.pem')
+// };
 
-var secureServer = https.createServer(options, app).listen(port);
+app.listen(port);
+// var secureServer = http.createServer(options, app).listen(port);
 console.log('Magic happens on port ' + port);
 
 module.exports = router;
