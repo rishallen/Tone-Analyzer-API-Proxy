@@ -29,60 +29,76 @@
     <script type="text/javascript" src="/d3/d3-tip.js"></script>
     <script type="text/javascript" src="/three/three.js"></script>
   </head>
-
   <body>
-
-
   <div>
-  <nav class="navbar navbar-default" role="navigation" style="padding-left:130px;">
-         <ul class="nav navbar-nav">
-        <li class="active"><a href="/">About<span class="sr-only">(current)</span></a></li>
-        <li><a href="#the_science">The Science</a></li>
-        <li><a href="#getting_started">Getting Started</a></li>
-      </ul>
-  </nav>
-  </div>
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation" style="padding-bottom:20px;" align="center">
+      <a class="navbar-brand" href="#" style="color:rgb(283,193,71)" >Tonalyze</a>
+        <ul class="topnav" id="myTopnav">
+          <li><a class="#active"><a href="/">About</a><span class="sr-only">(current)</span></a></li>
+          <li><a href="#the_science">The Science</a></li>
+          <li><a href="#getting_started">Getting Started</a></li>
+        </ul>
+    </nav>
+  <div>
   <br/>
-  <div class="jumbotron"> <p>
-  This is place to put content. You can put slider, short description about your website and place some links for navigation.
-  </p></div>
+  <br/>
+  <br/>
+  <br/>
+  <h1 style="color:rgb(42,51,83)" align="center">Check your Tone!</h1>
+  <br/>
+    <div class="container">
+      <div class="jumbotron">
+        <div id="#about">
+        <h2 style="color:rgb(221,55,93)">About</h2>
+        <h2 class="science">Modeling color changes of peppered moths, a classic example of evolution, using a genetic algorithm</h2>
+          <p>In the early-1800's, peppered moths lived on lichen-covered birch trees and were white with black speckles, making them blend in with their environment. An all-black variant of the peppered moth was virtually unknown.</p>
+          <p>After the industrial revolution, soot was pumped out into the atmosphere, changing the moths' habitat by making the trees dark and bare. Moths that were previously well camouflaged became easy prey, and the black variant of the moth began to thrive. Within a century, most of the moths in the region were black.</p>
+          <p>As environmental regulations became more strict and the air was cleaned up, the trees became light again&mdash;and the moth population once again changed. Within decades, white peppered moths were abundant, and black ones were rare.</p>
+          <p> class="explanation">This simulation demonstrates the effects of mutation and fitness advantage in achieving such rapid changes toward a highly camouflaged population.</p>
+        </div>
+      </div>
+    </div>
+
+  <div class="container">
+    <div class="jumbotron">
+      <div id="the_science">
+        <h2 style="color:rgb(221,55,93)">The Science</h2>
+        <h1>"this should be science"</h1>
+        <blockquote>
+          Where does it come from?
+          Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
+          The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.
+        </blockquote>
+        <p>
+          <blockquote
+          cite="http://www.ibm.com/watson/developercloud/doc/tone-analyzer/understanding-tone.shtml">
+          The Tone Analyzer Service helps people to understand three categories of tone scores: emotional tone, social tone, and language tone.
+          Each category has several sub-tones that the service scores. These tables describe each emotion or category,
+          and how to interpret the score the service returns for that emotion.
+        </blockquote>
+      </p>
+      </div>
+    </div>
   </div>
 
-    <h1>Analyze your Words</h1>
-      <h2 class="science">Modeling color changes of peppered moths, a classic example of evolution, using a genetic algorithm</h2>
+  <div class="container">
+    <div class="jumbotron">
+      <div id="getting_started">
+        <h2 style="color:rgb(221,55,93)">Getting Started</h2>
+        <h1>this is getting started"</h1>
+        <blockquote>
+          Where does it come from?
+          Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
+          The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.
+        </blockquote>
+      </div>
+    </div>
+  </div>
 
-      <div id="tone-analysis">
-       <p>In the early-1800's, peppered moths lived on lichen-covered birch trees and were white with black speckles, making them blend in with their environment. An all-black variant of the peppered moth was virtually unknown.</p>
-
-       <p>After the industrial revolution, soot was pumped out into the atmosphere, changing the moths' habitat by making the trees dark and bare. Moths that were previously well camouflaged became easy prey, and the black variant of the moth began to thrive. Within a century, most of the moths in the region were black.</p>
-
-       <p>As environmental regulations became more strict and the air was cleaned up, the trees became light again&mdash;and the moth population once again changed. Within decades, white peppered moths were abundant, and black ones were rare.</p>
-
-       <p> class="explanation">This simulation demonstrates the effects of mutation and fitness advantage in achieving such rapid changes toward a highly camouflaged population.</p>
-     </div>
-
-
-<p>
-<blockquote
-cite="http://www.ibm.com/watson/developercloud/doc/tone-analyzer/understanding-tone.shtml">
-The Tone Analyzer Service helps people to understand three categories of tone scores: emotional tone, social tone, and language tone.
-Each category has several sub-tones that the service scores. These tables describe each emotion or category,
-and how to interpret the score the service returns for that emotion.
-</blockquote>
-</p>
-
-<div id="the_science">
-  <h1>this should be science"</h1>
-</div>
-
-<div id="getting_started">
-  <h1>this is getting started"</h1>
-</div>
-
-<hr>
-<footer id="copyright">
-    <span class='copy'>Copyright &copy; Risha Allen 2016</span>
-    <span class="contact"><a href="https://github.com/rishallen">Github</a> <span class="divider">•</span> <a href="https://www.linkedin.com/in/risha-allen-00a87b18">LinkedIn</a> <span class="divider">•</span> <a href="mailto:rishallen@gmail.com?Subject=Hey%20Risha" target="_top">Email Me</a></span>
-</footer>
-</body>
+  <hr>
+    <footer id="copyright">
+      <span class='copy'>Copyright &copy; Risha Allen 2016</span>
+      <span class="contact"><a href="https://github.com/rishallen">Github</a> <span class="divider">•</span> <a href="https://www.linkedin.com/in/risha-allen-00a87b18">LinkedIn</a> <span class="divider">•</span> <a href="mailto:rishallen@gmail.com?Subject=Hey%20Risha" target="_top">Email Me</a></span>
+    </footer>
+  </body>
 </html>
