@@ -4,7 +4,7 @@ html, body {
 }
 
 .navbar-default {
-    background-color: rgb(23, 191, 196);
+    background-color: rgb(42, 51, 83);
     border-color: rgb(23, 191, 196);
     border-radius: 0;
     padding-top: 5px;
@@ -27,7 +27,7 @@ ul.topnav {
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background-color: rgb(23, 191, 196);
+  background-color: rgb(42, 51, 83);
 }
 
 ul.topnav li {float: left;}
@@ -44,7 +44,7 @@ ul.topnav li a {
 
 ul.topnav li a:hover {
   color:rgb(238, 193, 71);
-  background-color: rgb(23, 191, 196);
+  /*background-color: rgb(23, 191, 196);*/
 }
 
 ul.topnav li.icon {display: none;}

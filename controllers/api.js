@@ -1,11 +1,11 @@
 "use strict";
-var keys           = require('../keys.js');
+var config          = require('../config.js');
 var ToneAnalyzerV3 = require('watson-developer-cloud/tone-analyzer/v3');
 let request        = require('request');
 var pick           = require('object.pick');
 var extend         = require('extend');
-let username       = keys.USERNAME;
-let password       = keys.PASSWORD;
+let username       = config.USERNAME;
+let password       = config.PASSWORD;
 
 // this is connected to the routes in server.js
   module.exports = {
