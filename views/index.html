@@ -5,11 +5,13 @@
     <meta charset="UTF-8">
     <meta content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
     <metta http-equiv="Content-Type" content="application/xhtml+xml"
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
 
     <title></title>
     <link rel="stylesheet" scr="https://d3js.org/d3.v4.min.js" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:400,900" type="text/css">
-    <link rel="stylesheet" href="./css/style.css" type="text/css">
 
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.3/angular.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.3/angular-route.min.js"></script>
@@ -20,10 +22,23 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"></script>
     <!-- this is javascript -->
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="./css/style.css" type="text/css">
 
     <script src="script.js"></script>
     <script src="//d3js.org/d3.v3.min.js"></script>
-
+    <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">    <link rel="manifest" href="/manifest.json">
     <script src="https://d3js.org/d3.v4.min.js"></script>
     <script type="text/javascript" src="/d3/d3.min.js"></script>
     <script type="text/javascript" src="/d3/d3-tip.js"></script>
@@ -32,72 +47,68 @@
   <body>
   <div>
     <nav class="navbar navbar-default navbar-fixed-top" role="navigation" style="padding-bottom:20px;" align="center">
-      <a class="navbar-brand" href="#" style="color:rgb(283,193,71)" >Tonalyze</a>
+      <a class="navbar-brand" href="#" style="color:rgb(283,193,71)">Tonalyze</a>
+      <img class="logo" src="./images/tonalyze_logo2.png" alt="emotion face" width="25" height="25">
         <ul class="topnav" id="myTopnav">
           <li><a class="#active"><a href="#about">About</a><span class="sr-only">(current)</span></a></li>
           <li><a href="#the_science">The Science</a></li>
           <li><a href="#getting_started">Getting Started</a></li>
+          <li><a href="#technologies">Technologies</a></li>
         </ul>
     </nav>
-  <div>
-  <br/>
-  <br/>
-  <br/>
-  <br/>
-  <h1 style="color:rgb(42,51,83)" align="center">Check your Tone!</h1>
+  </div>
+
+  <div class="title-container">
+    <img class="logo2" src="./images/tonalyze_logo2.png" alt="emotion face" width="100" height="100">
+    <!-- <h1 style="color:rgb(42,51,83)" align="center">Check your Tone!</h1> -->
+  </div>
     <div class="container">
       <div class="jumbotron">
-        <div id="about">
+        <a id="about" class="anchor"></a>
         <h2 style="color:rgb(221,55,93)">About</h2>
-        <h3 class="colors">Gain Confidence With a Click of a Button</h3>
+        <h3 class="colors">Enhance Your tone Intent</h3>
         <blockquote>
           <p>
+            Gain Confidence With a Click of a Button with Tonalyze.????
             Analyze your email text right form your gmail account with a push of a button.
             Tonalyze uses linguistic analysis  to detect three types of tones from your email text:
             emotions, social tendencies, and writing style, all at the convenience of your personal button.
             Analyze text as mush as you need to get the result you are looking for.  Use the results to determine if your writing comes across the way you intend for it to and send your email with confidence.
           </blockquote>
           <p>
-
-            In the early-1800's, peppered moths lived on lichen-covered birch trees and were white with black speckles, making them blend in with their environment. An all-black variant of the peppered moth was virtually unknown.</p>
-          <p>After the industrial revolution, soot was pumped out into the atmosphere, changing the moths' habitat by making the trees dark and bare. Moths that were previously well camouflaged became easy prey, and the black variant of the moth began to thrive. Within a century, most of the moths in the region were black.</p>
-          <p>As environmental regulations became more strict and the air was cleaned up, the trees became light again&mdash;and the moth population once again changed. Within decades, white peppered moths were abundant, and black ones were rare.</p>
-          <p> class="explanation">This simulation demonstrates the effects of mutation and fitness advantage in achieving such rapid changes toward a highly camouflaged population.</p>
-        </div>
       </div>
     </div>
 
   <div class="container">
     <div class="jumbotron">
-      <div id="the_science">
+      <a id="the_science" class="anchor"></a>
         <h2 style="color:rgb(221,55,93)">The Science</h2>
-        <h3 class="colors">"this should be science"</h3>
-        <blockquote>
-          Where does it come from?
-          Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
-          The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.
-        </blockquote>
+        <h3 class="colors">Language and Personality</h3>
         <p>
           <blockquote
-          cite="http://www.ibm.com/watson/developercloud/doc/tone-analyzer/understanding-tone.shtml">
-          The Tone Analyzer Service helps people to understand three categories of tone scores: emotional tone, social tone, and language tone.
-          Each category has several sub-tones that the service scores. These tables describe each emotion or category,
-          and how to interpret the score the service returns for that emotion.
-        </blockquote>
-      </p>
-      <p>
+            cite="http://www.ibm.com/watson/developercloud/doc/tone-analyzer/understanding-tone.shtml">
+            Miscommunication happens, even when we intentionally attempt to avoid it.
+            The use of words is one the most direct ways we express our thoughts and feelings (Faust & Funder, 2008).
+            Studies show that language and personality are related, and our personality shapes how our words are used and the ways in which we communicate to others (Sanford, 1942).
+          </blockquote>
+        </p>
+        <p>
+          <blockquote
+            cite="http://www.ibm.com/watson/developercloud/doc/tone-analyzer/understanding-tone.shtml">
+            The use of words is one the most direct ways we express our thoughts and feelings (Faust & Funder, 2008).
+            Miscommunication happens, even when we intentionally attempt to avoid it.
+            Studies show that language and personality are related, and our personality shapes how our words are used and the ways in which we communicate to others (Sanford, 1942).
+          </blockquote>
+        </p>
         Currently, only English text can be analyzed.
-      </p>
-      <p>
-        Sentences with less than three words do not return a response.
-      </p>
-      </div>
+        </p>
+        <img class="logo2" src="./images/email_tone.png" alt="emotion face"  width="550" height="200">
     </div>
   </div>
 
   <div class="container">
     <div class="jumbotron">
-      <div id="getting_started">
+      <a id="getting_started" class="anchor"></a>
         <h2 style="color:rgb(221,55,93)">Getting Started</h2>
         <h3 class="colors">this is getting started"</h3>
         <blockquote>
@@ -105,14 +116,28 @@
           Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
           The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.
         </blockquote>
-      </div>
+        <img class="logo2" src="./images/extension.png" alt="emotion face"  width="550" height="200">
+
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="jumbotron">
+      <a id="technologies" class="anchor"></a>
+      <h2 style="color:rgb(221,55,93)">Technologies</h2>
+      <blockquote>
+        <img class="pictures" src="./images/chrome.png" alt="chrome" width="100" height="100">
+        <img class="pictures" src="./images/d3.png" alt="d3" width="100" height="100">
+        <img class="pictures" src="./images/jquery.png" alt="jquery" width="100" height="100">
+        <img class="pictures" src="./images/js_html_css.png" alt="js_html_css" width="150" height="150">
+      </blockquote>
     </div>
   </div>
 
   <hr>
     <footer id="copyright">
       <span class='copy'>Copyright &copy; Risha Allen 2016</span>
-      <span class="contact"><a href="https://github.com/rishallen">Github</a> <span class="divider">•</span> <a href="https://www.linkedin.com/in/risha-allen-00a87b18">LinkedIn</a> <span class="divider">•</span> <a href="mailto:rishallen@gmail.com?Subject=Hey%20Risha" target="_top">Email Me</a></span>
+      <span class="contact"><a href="https://github.com/rishallen/CapStone2016">Github</a> <span class="divider">•</span> <a href="https://www.linkedin.com/in/risha-allen-00a87b18">LinkedIn</a> <span class="divider">•</span> <a href="mailto:rishallen@gmail.com?Subject=Hey%20Risha" target="_top">Email Me</a></span>
     </footer>
   </body>
 </html>
