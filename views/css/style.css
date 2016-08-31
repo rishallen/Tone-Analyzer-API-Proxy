@@ -104,10 +104,12 @@ a.anchor {
 }
 
 .logo {
-  margin-right: 750px;
-
+  /*margin-left: 10px;*/
+  float: left;
+}
 
 .logo2 {
-
+  float:left;
+  padding: 3px;
   /*margin-left: 150px;*/
 }
