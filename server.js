@@ -34,10 +34,10 @@ var router = express.Router();              // get an instance of the express Ro
 //
 
 router.get("/",function(req,res){
-  // res.sendFile(path + "index.html", { root: __dirname });
   res.sendFile('index.html');
-    // res.sendFile("/views/index.html", { root: __dirname });
 });
+
+
 //
 // router.get('/the_science',function(req,res){
 //   res.sendFile("the_science.html");
@@ -46,7 +46,6 @@ router.get("/",function(req,res){
 // router.get('/getting_started',function(req,res){
 //   res.sendFile("getting_started.html");
 // });
-
 
 // endpoint
 router.post('/v1/analyze', function(req, res) {
